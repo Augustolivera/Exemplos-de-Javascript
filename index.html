@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exemplo 10</title>
+
+ <style>
+    body{
+        background-color: rgb(12, 37, 58);
+    }
+    div{
+        background-color: rgb(153, 86, 24);
+        color:rgb(255, 255, 255);
+        border-radius: 4px;
+        margin: 15px;
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+        display: inline-block;
+    }
+    div input, button{
+        background-color: aquamarine;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+        
+    h1, div h2{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color:rgb(255, 255, 255);
+    }
+    
+    .btlayout{
+        font-size: 15px;
+        background-color: rgb(201, 253, 11);
+        border: 3px dotted;
+        border-radius:6px;
+        font-family:cursive;
+    }
+    .btlayout:hover{
+        background-color: crimson;
+    }
+ </style>
+
+
+
+        <script>
+            function media(){
+                let a = parseInt(document.getElementsByTagName("input")[0].value);
+                let b = parseInt(document.getElementsByTagName("input")[1].value);
+                let med = ((a+b)/2);
+
+                document.getElementById("result").innerHTML = "<p> O resultado é :</p>" + med;
+
+                //Ou...
+                //const resultado = document.getElementByClassName("result");
+                //resultado[0].innerHTML = "Resultado: " +media;
+
+            };
+        
+            function limpar(){
+                
+                parseInt(document.getElementsByTagName("input")[0].value = "");
+                parseInt(document.getElementsByTagName("input")[1].value = "");
+                 let med="";
+                document.getElementById("result").innerHTML = "<p> O resultado é :</p>" + med;
+            }
+        
+            
+            let modo = 0;
+            
+            function alterarLayout(){
+            const minhaDiv = document.getElementsByTagName("div")[0].style;
+            
+            const meuBotao = document.getElementsByTagName("button")[2].style;
+            
+            if (modo==0){
+                minhaDiv.padding = "15px";
+                minhaDiv.border = "3px ";
+                minhaDiv.backgroundColor = "green";
+                modo = 1;
+                meuBotao.backgroundColor = "gray";
+            } 
+            else{
+                minhaDiv.padding= "15px";
+                minhaDiv.border - "2px solid blueviolet;"
+                minhaDiv.backgroundColor = "rgb(153, 86, 24)";
+                modo = 0;
+                minhaDiv.widht ="300px";
+                meuBotao.backgroundColor = "rgb(201, 253, 11)";
+            }
+
+        
+            // Aqui é o que funciona, logo só mexer:
+            //NOTA 2 : agora tá funfando o négocio de cima, utilize mais o console log!
+        //document.getElementsByTagName("div")[0].style.backgroundColor = "purple";	
+        //document.getElementsByTagName("div")[1].style.backgroundColor = "red";
+        //document.getElementsByTagName("input")[0].style.backgroundColor ="green";               
+        //document.getElementsByTagName("input")[1].style.backgroundColor = "green";  
+        //document.getElementsByTagName("button")[0].style.backgroundColor ="pink";
+        //document.getElementsByTagName("button")[1].style.backgroundColor = "brown";
+                
+            }
+        
+        </script>
+
+        </head>
+<body>
+  
+    <h1> Exemplo de  21/10 </h1>
+  
+    <div>
+        <h1> Média aritmética</h1>
+    <p>
+    <label for="nota1"> Nota 1 : </label>
+    <input id ="nota1" type="text" ></p>
+   
+   <p> <label for="nota2"> Nota 2 : </label>
+    <input id="nota2" type="text" ></p>
+
+    <button onclick="limpar()"> limpar</button>
+    <button id="envia" onclick="media()" > enviar </button>
+
+    <button class="btlayout" onclick="alterarLayout()"> Alterar layout</button> 
+
+</div>
+    <br>
+    
+    <div id="result">
+        
+    </div>
+</body>
+</html>
