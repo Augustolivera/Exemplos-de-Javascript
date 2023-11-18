@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando imagens</title>
+
+<style>
+    body{
+        background-color: beige;
+    }
+
+    img{
+        border-radius: 8px;
+    }
+    button{
+        background-color: rgb(30, 58, 47);
+        color: hsl(0, 0%, 100%);
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: hsl(0, 65%, 13%);
+    }
+</style>
+
+<script>
+        let modo = 0;
+    
+    function alterar(){
+       const imagem = document.getElementsByTagName("img")[0];
+
+       const botao = document.getElementsByTagName("button")[0];
+
+       if(modo==0){
+        imagem.src = "images/vasco.png";
+        modo=1;
+       }
+       else{
+            imagem.src= "images/tigre.jpg";
+            modo=0;
+       }
+       
+    }
+</script>
+</head>
+
+
+<body>
+    <h1> Alterando imagens</h1>
+
+    <img src="../aula_11/images/tigre.jpg">
+
+    <button onclick="alterar()"> Clique Aqui</button>
+</body>
+</html>

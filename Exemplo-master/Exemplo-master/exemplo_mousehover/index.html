@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 13</title>
+</head>
+<body style="font-size:26px;">
+    <h2> Exemplo 13 <br> Mouse over/out</h2>
+
+    <div style="background-color:rgb(4, 0, 255); width:200px;height:200px; color:red;font-size:100px; padding-top:60px;" onmouseover="funcao(this);" onmouseout="funcao2(this);">
+        
+        <div style="background-color: rgb(29, 126, 45);">
+            Sabo
+        </div>
+    
+    </div>
+    <script>
+        function funcao(obj){
+            obj.innerHTML = "Frase aleatória ";
+            obj.style.fontSize = "60px";
+            obj.style.paddingTop = "60px";
+        }
+
+        function funcao2(obj){
+            obj.innerHTML = "Sabo";
+            obj.innerHTML.width ="200px";
+            obj.innerHTML.fontSize = "60px";
+
+        }
+    </script>
+</body>
+</html>
