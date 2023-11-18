@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 17</title>
+    
+    <style>
+        form{
+            background-color:green;
+            color:yellow;
+            display:inline-block;
+            padding:20px;
+            border-radius:8px;
+        }
+        form button, input {
+            background-color: rgb(142, 207, 142);
+        }
+    </style>
+</head>
+<body>
+   
+   <h1> Exemplo 17 </h1>
+    <h2> Validação de formulário</h2>
+    <form>
+        <label for="idade"> Idade :</label>
+        <input type="text" id="idade" placeholder="Insira sua idade">
+        <button onclick="validar()"> Enviar </button>
+
+    </form>
+
+    <script>
+        
+            let modo = 0;
+        
+            function validar(){
+                
+                // Também pode ser feito dessa forma
+                //let dados = document.form["formulario"]["nome"].value();
+            const id = document.getElementsByTagName("input")[0].value;
+
+            if(isNaN(id) || id<1 || id>130){
+                alert("Idade inválida, por favor tente novamente!");
+                return false;
+            }
+            else{
+                alert("idade válida");
+            }
+        }
+    </script>
+</body>
+</html>
