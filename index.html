@@ -3,81 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
+    <title>Alterando imagens</title>
 
-    <style>
-        body{
-            background-color: rgb(141, 77, 77);
-            text-align: center;
-        }
-        main{
-            background-color: white;
-            padding:20px;
-            border-radius: 6px;
-            margin: 20px;
-            display: inline-block;
-            text-align: center;
+<style>
+    body{
+        background-color: beige;
+    }
 
-        }
-        h1{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        button,input,span{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            padding: 8px;
-            margin: 6px;
-        }
-    </style>
+    img{
+        border-radius: 8px;
+    }
+    button{
+        background-color: rgb(30, 58, 47);
+        color: hsl(0, 0%, 100%);
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: hsl(0, 65%, 13%);
+    }
+</style>
 
+<script>
+        let modo = 0;
+    
+    function alterar(){
+       const imagem = document.getElementsByTagName("img")[0];
 
-</head>
-<body>
-    <main>
-    <h1> Trabalho sobre To Do List</h1>
-        
+       const botao = document.getElementsByTagName("button")[0];
+
+       if(modo==0){
+        imagem.src = "images/vasco.png";
+        modo=1;
+       }
+       else{
+            imagem.src= "images/tigre.jpg";
+            modo=0;
+       }
        
-            <input type="text" placeholder = "Digite aqui a atividade" id="tarefa">
-            <button onclick="listar()"> Clique aqui!</button>
-            <div id="demo"></div></main>
-            <script>
-                let modo=0;
-                let id=1;
-                
-                function listar(){
-                    const div2 = document.createElement("div");    
-                    const button = document.createElement("input");
-                    button.type = "submit";
-                    const span = document.createElement("span");
-                    const input = document.createElement("input");
-                    input.type = "checkbox";
-                    const texto = document.getElementById("tarefa").value;
-                    const div = document.getElementById("demo");  
-                    span.innerHTML = texto;
-                    button.value = "Excluir";
-                    div.appendChild(div2);
-                    div2.appendChild(span);
-                    div2.appendChild(input);
-                    div2.appendChild(button);
-                    
-                    button.addEventListener("click", function(){
-                        const element = document.activeElement.parentElement;
-                        element.remove();
-                    });
-                    
-                    input.addEventListener("click", function(){
-                        console.log(input.checked);
-                        if(input.checked)
-                            span.style.textDecoration = "line-through";
-                        else
-                            span.style.textDecoration = "none";
-                    });
-                                      
-                
-                }
+    }
+</script>
+</head>
 
-                
-                
-            </script>
 
+<body>
+    <h1> Alterando imagens</h1>
+
+    <img src="../aula_11/images/tigre.jpg">
+
+    <button onclick="alterar()"> Clique Aqui</button>
 </body>
 </html>
