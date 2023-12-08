@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 12</title>
+    <style>
+       body{
+        text-align: center;
+        font-size: 20px;
+        padding: 8px;
+        background-color: antiquewhite;
+        color:rgb(85, 43, 3);
+    }
+    
+       h2{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+    }
+       input{
+        margin: 6px;
+       }
+    
+    </style>
+</head>
+
+<body>
+    <h2>Exemplo 12</h2>
+    <p> | Alterar o texto do input |</p>
+    <label for="caixa">Nome:</label>
+    <input id="caixa" type="text" placeholder="Digite seu nome" onchange="atualizarTexto();">
+    <br>
+    <label for="email">Email:</label>
+    <input id="email" type="text" placeholder="Digite seu e-mail" onchange="atualizarEmail();">
+    <input type="button" value="Limpar" onclick="limpar();">
+   
+   <script>
+        function atualizarTexto(){
+            const texto = document.getElementById("caixa");
+            texto.value = texto.value.toUpperCase(); 
+        }
+        function atualizarEmail(){
+            const email = document.getElementById("email");
+            email.value = email.value.toLowerCase(); 
+        }
+        function limpar(){
+            document.getElementById("caixa").value = "";
+            document.getElementById("email").value = "";
+        }
+    </script>
+</body>
+</html>
